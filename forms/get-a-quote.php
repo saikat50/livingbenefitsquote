@@ -46,6 +46,15 @@ $sheet->insertToSheet($service,$spreadSheetId,$range,$values);
     session_start();
     $_SESSION['section'] = "quote";
     
+    
+      //calltools insert
+    $payload = json_encode( array( "phone_number" => $phone_number, "first_name" => $first_name, "last_name" => $last_name, "email_address" => $email_address,"custom2"=>$age,"custom1"=>$birthday,"custom11"=>$state_residing,"custom12"=>$insurance_type,"custom13"=>$face_amount,"custom14"=>$smoker,"custom10"=>"Get A Qoute",
+    "file"=>"743501") );
+    
+    
+    $sheet->callToolsInit($payload);
+    
+    
     $sheet->redirect();
     
     

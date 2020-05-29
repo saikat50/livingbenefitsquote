@@ -40,6 +40,14 @@ $sheet->insertToSheet($service,$spreadSheetId,$range,$values);
     session_start();
     $_SESSION['section'] = "register";
     
+    
+    
+    //calltools insert
+    $payload = json_encode( array( "phone_number" => $phone_number, "first_name" => $first_name, "last_name" => $last_name, "email_address" => $email_address,"custom7"=>$insurance,"custom8"=>$lic_agent,"custom9"=>$schedule,"custom10"=>"Webinar", "file"=>"743501") );
+    
+    
+    $sheet->callToolsInit($payload);
+    
     $sheet->redirect();
     
     

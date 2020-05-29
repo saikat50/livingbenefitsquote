@@ -39,6 +39,15 @@ $sheet->insertToSheet($service,$spreadSheetId,$range,$values);
     session_start();
     $_SESSION['section'] = "join";
     
+    
+       //calltools insert
+    $payload = json_encode( array( "phone_number" => $phone_number, "first_name" => $first_name, "last_name" => $last_name, "email_address" => $email_address,"custom15"=>$lic_number,"custom16"=>$npm,"custom17"=>$resi_lic_state,"custom10"=>"Join Our Team",
+    "file"=>"743501") );
+    
+    
+    $sheet->callToolsInit($payload);
+    
+    
     $sheet->redirect();
     
     

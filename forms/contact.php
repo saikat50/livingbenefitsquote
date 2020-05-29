@@ -48,6 +48,14 @@ $sheet->insertToSheet($service,$spreadSheetId,$range,$values);
     session_start();
     $_SESSION['section'] = "contact";
     
+    
+       //calltools insert
+    $payload = json_encode( array( "phone_number" => $phone_number, "first_name" => $first_name, "last_name" => $last_name, "email_address" => $email_address,"city"=>$city,"state"=>$state,"custom18"=>$lif_licensed,"custom19"=>$parimary_career,"custom20"=>$find_website,"custom21"=>$contact_by,"custom22"=>$message,"custom10"=>"Contact",
+    "file"=>"743501") );
+    
+    
+    $sheet->callToolsInit($payload);
+    
     $sheet->redirect();
     
     
